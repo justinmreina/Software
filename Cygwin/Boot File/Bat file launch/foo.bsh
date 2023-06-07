@@ -1,0 +1,2 @@
+echo TESTING MY SCRIPT?
+echo OK, to file > dummyFile.txt

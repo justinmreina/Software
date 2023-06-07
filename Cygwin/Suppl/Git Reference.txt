@@ -1,0 +1,30 @@
+
+@brief 		x
+@details 	x
+@auth 		Justin Reina
+@date 		3/7/20
+
+@section 	Cygwin Shortcuts
+	alias gi='git init'             #cleaner use of command
+
+	alias gs='git status'           #""
+
+	alias gk='gitk --all &'         #""
+
+	alias ga='git add *'            #""
+
+	alias gc='git commit -m'        #""
+
+	alias gcam='git commit --amend' #""
+
+	alias gp='git push'             #""
+
+	alias gr='git reset --hard'     #""
+
+	alias cgs='clear;git status'   #clear console before check
+
+	alias gl='git log -n 1'         #""
+
+	alias gks='gk; clear; gs'       #show repo disp & clean status
+
+	alias gign='git init;echo "" > .gitignore;git add .gitignore;git commit -m "(+)    initial commit"' #shorthand for common routine

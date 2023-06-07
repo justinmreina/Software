@@ -1,0 +1,22 @@
+when searching all files in a dir, consider using grep from cygwin. some option notes and an example
+
+-i 		'Case Insensitive'
+-n		'Print Line Number'
+-r		'Recursively Search all Subdirectories'
+
+--color 	print nice and clean with color
+--include	specify file type
+
+@section 	Example
+	grep -in --color -r a *
+	
+	Recursively search all files and subdirectories at root for case insensitive matches to 'a'. Print the results in color to the console
+
+@section 	Notes
+	Use "--include \*.txt" to specify file type
+
+@section 	Ref
+	grep -in --color -r a * --include \*.txt
+	
+	Search here for the letter 'a' in all text files (.txt)
+

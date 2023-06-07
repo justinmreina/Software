@@ -1,0 +1,52 @@
+on bash_profile, if a file exists, then print, and delete that file on completion
+
+//next steps
+	get the cygwin_git.bat tied into a new right-click menu action
+	when that is called, ensure it generates the new file, cygwin sees it and acts appropriately
+
+e.g.
+
+justin.bat
+	creates a shell file for cygwin to run (C:\sw\cygwin64\jmr\cyg_boot.sh)
+	calls mintty.exe
+		mintty in bash_profile checks for this file. if found, it does the git op, then deletes the file
+		
+	or
+	
+	creates an empty file to signal cygwin (C:\sw\cygwin64\jmr\use_git_jmr)
+		>echo test > C:\sw\cygwin64\jmr\use_git_jmr
+	calls mintty.exe
+		mintty in bash_profile checks for this file. 
+		if found
+			does the git op
+			then deletes the file
+		else
+			just normal op!
+
+			
+//.bash_profile addition
+	#Jmr Add
+	USERNAME="\e[0;32mJustin@DESKTOP-N8UIS43\e[0m"
+	DIRECTORY="$(pwd)"
+
+	#Check for jmr-git-flag file
+	if [ -f  /cygdrive/c/sw/cygwin64/jmr/use_git_jmr ]
+	then
+		#print the normal cygwin terminal line <open>
+		
+		#check the git status
+		git status
+		
+		#remove the file on completion. note that it must have full permissions in cygwin 
+		#else it will ask the user for confirmation to delete
+		rm /cygdrive/c/sw/cygwin64/jmr/use_git_jmr
+	fi
+
+	
+@open
+	how do you pass input arguments to a Windows Bat file?
+		*specifically the working directory of the call
+
+@open
+	how do you pass input arguments to Cygwin?
+		*shared file access

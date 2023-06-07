@@ -1,0 +1,31 @@
+@sec	Create new R.C. Option
+
+	HKEY_CLASSES_ROOT\Directory\shell (note: this is top sec)
+
+	New->Key : 'git_status_check'
+		(Default) : '&Check Git Status Here...'
+		Icon : <todo>.ico
+	
+	(temp)
+	New->Key: 'command' under 'git_status_check'
+		(Default) : C:\sw\cygwin64\bin\mintty.exe -e /bin/xhere /bin/bash.exe "%L"
+
+	(step 1)
+	New->Key: 'command' under 'git_status_check'
+		(Default) : C:\cygwin_git.bat "%L"
+		*problem: doesn't capture the directory clicked!
+		
+	(step 1)
+	New->Key: 'command' under 'git_status_check'
+		(Default) : C:\cygwin_git.bat "%L"
+		?
+		
+@sec 	Generate Cygwin response in startup script
+
+	C:\sw\cygwin64\home\Justin\.bash_profile
+	
+@sec 	Next Steps
+		- call your batch file, with "%L" as an input!
+
+		- @src 'D:\Documents\MyInstalls\Cygwin\HowTo\have cygwin do your git trick\cygwin_git.bat'
+			@note long ass name, sorry!
